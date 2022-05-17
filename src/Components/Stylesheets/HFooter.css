@@ -13,8 +13,9 @@
 }
 .footer-main {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   font-size: 14px;
+  padding: 0px 15px;
 }
 .footer-main > ul {
   margin: 0;
@@ -26,6 +27,11 @@
   padding: 15px;
 }
 
+@media (max-width: 1000px) {
+  .footer-main {
+    justify-content: space-between;
+  }
+}
 @media (max-width: 670px) {
   .footer-main {
     flex-direction: column;
