@@ -1,0 +1,32 @@
+.home-navbar {
+  padding: 6px;
+  padding-right: 15px;
+  height: 50px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.87) !important;
+}
+
+.home-navbar > ul {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+}
+.home-navbar > ul > li {
+  padding-left: 15px;
+}
+.hnav-pages {
+  padding-right: 15px;
+}
+.menu-icon {
+  height: 15px;
+  position: relative;
+  bottom: -12px;
+  padding: 8px;
+  fill: rgba(0, 0, 0, 0.87);
+}
+.menu-icon:hover {
+  background-color: rgba(60,64,67,.08);
+}

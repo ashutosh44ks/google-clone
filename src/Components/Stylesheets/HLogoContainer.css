@@ -1,0 +1,6 @@
+.logo-container {
+  padding: 10px;
+}
+.logo-container > img {
+  height: 92px;
+}

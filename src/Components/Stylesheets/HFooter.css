@@ -1,0 +1,36 @@
+.home-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #f2f2f2;
+  color: #70757a;
+}
+
+.footer-location {
+  padding: 15px 30px;
+  font-size: 15px;
+  border-bottom: 1px solid #dadce0;
+}
+.footer-main {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 14px;
+}
+.footer-main > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+.footer-main > ul > li {
+  padding: 15px;
+}
+
+@media (max-width: 670px) {
+  .footer-main {
+    flex-direction: column;
+  }
+  .footer-main > ul {
+    justify-content: center;
+  }
+}
