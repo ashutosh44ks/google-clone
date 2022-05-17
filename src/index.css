@@ -12,7 +12,7 @@ body {
 .link {
   background-color: transparent;
   border: none;
-  color: blue;
+  color: #1a0dab;
 }
 .hover-underline:hover {
   text-decoration: underline;

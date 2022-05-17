@@ -1,12 +1,9 @@
-import { useState } from "react";
 import "./Stylesheets/HNavbar.css";
-import { ReactComponent as accountIcon } from "./Stylesheets/account.svg";
 import { ReactComponent as MenuIcon } from "./Stylesheets/menu.svg";
 import Button from "./Button";
 import Menu from "./Menu";
 
-const HNavbar = ({ user }) => {
-  const [open, setOpen] = useState(false);
+const HNavbar = ({ open, setOpen, user }) => {
   return (
     <div className="home-navbar">
       <ul className="hnav-pages">
@@ -17,6 +14,7 @@ const HNavbar = ({ user }) => {
         <li className="hover-underline cursor-pointer">
           <MenuIcon
             className="menu-icon"
+            title="Google Apps"
             onClick={() => {
               setOpen((open) => !open);
             }}

@@ -4,8 +4,10 @@ import HLogoContainer from "./Components/HLogoContainer";
 import Input from "./Components/Input";
 import Button from "./Components/Button";
 import HFooter from "./Components/HFooter";
+import HGLangs from "./Components/HGLangs";
 
 function App() {
+  const [open, setOpen] = useState(false);
   const mediaTheme = window.matchMedia("(prefers-color-scheme: dark)");
   useEffect(() => {
     if (
@@ -18,7 +20,7 @@ function App() {
 
   return (
     <div className="App">
-      <HNavbar />
+      <HNavbar open={open} setOpen={setOpen} />
       <div className="flex-center-col">
         <HLogoContainer />
         <Input />
@@ -26,20 +28,7 @@ function App() {
           <Button value="Google Search" useFor="search-btn" />
           <Button value="I'm Feeling Lucky" useFor="search-btn" />
         </div>
-        <div className="g-langs">
-          Google offered in:
-          <button className="g-lang link hover-underline cursor-pointer">हिन्दी</button>
-          <button className="g-lang link hover-underline cursor-pointer">বাংলা</button>
-          <button className="g-lang link hover-underline cursor-pointer">తెలుగు</button>
-          <button className="g-lang link hover-underline cursor-pointer">मराठी</button>
-          <button className="g-lang link hover-underline cursor-pointer">தமிழ்</button>
-          <button className="g-lang link hover-underline cursor-pointer">
-            ગુજરાતી
-          </button>
-          <button className="g-lang link hover-underline cursor-pointer">ಕನ್ನಡ</button>
-          <button className="g-lang link hover-underline cursor-pointer">മലയാളം</button>
-          <button className="g-lang link hover-underline cursor-pointer">ਪੰਜਾਬੀ</button>
-        </div>
+        <HGLangs />
       </div>
       <HFooter />
     </div>
