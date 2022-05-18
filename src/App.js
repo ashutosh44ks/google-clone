@@ -7,6 +7,7 @@ import HFooter from "./Components/HFooter";
 import HGLangs from "./Components/HGLangs";
 
 function App() {
+  const [openSug, setOpenSug] = useState(false);
   const [open, setOpen] = useState(false);
   // const mediaTheme = window.matchMedia("(prefers-color-scheme: dark)");
   // useEffect(() => {
@@ -19,11 +20,18 @@ function App() {
   // }, [mediaTheme]);
 
   return (
-    <div className="App">
+    <div
+      className="App"
+      onClick={(e) => {
+        console.log(e.target.className);
+        if (e.target.className !== "input-srch") setOpenSug(false);
+        if (e.target.className.baseVal !== "menu-icon") setOpen(false);
+      }}
+    >
       <HNavbar open={open} setOpen={setOpen} />
       <div className="flex-center-col">
         <HLogoContainer />
-        <Input />
+        <Input openSug={openSug} setOpenSug={setOpenSug} />
         <div className="btn-container">
           <Button value="Google Search" useFor="search-btn" />
           <Button value="I'm Feeling Lucky" useFor="search-btn" />

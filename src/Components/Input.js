@@ -6,32 +6,19 @@ import { ReactComponent as CloseIcon } from "./Stylesheets/close.svg";
 import Button from "./Button";
 import axios from "axios";
 
-const Input = () => {
-  //YAAR YEH DO BAAR KYU RUN HORA HAI SAB
-  //FIX Dropdown position w.r.t. input 
+const Input = ({ openSug, setOpenSug}) => {
   const [srch, setSrch] = useState("");
-  const [open, setOpen] = useState(false);
   const [suggestions, setSuggestions] = useState([]);
 
-  // useEffect(() => {
-  //   const inputIcon = document.querySelectorAll(".input-icon");
-  //   const input = document.querySelector("input");
-  //   inputIcon.forEach((icon) => {
-  //     icon.addEventListener("click", () => {
-  //       input.focus();
-  //     });
-  //   });
-  // }, []);
-  // useEffect(() => {
-  //   const input = document.querySelector("input");
-  //   input.addEventListener("focus", () => {
-  //     openSuggestions();
-  //   });
-  // }, [open]);
-  // function openSuggestions() {
-  //   console.log(open);
-  //   setOpen(true);
-  // }
+  useEffect(() => {
+    const inputIcon = document.querySelectorAll(".input-icon");
+    const input = document.querySelector("input");
+    inputIcon.forEach((icon) => {
+      icon.addEventListener("click", () => {
+        input.focus();
+      });
+    });
+  }, []);
   useEffect(() => {
     axios
       .request(options)
@@ -58,7 +45,7 @@ const Input = () => {
         className="search-container"
         title="Search"
         onClick={() => {
-          setOpen((open) => !open);
+          setOpenSug((openSug) => !openSug);
         }}
       >
         <SearchIcon className="search-icon input-icon" />
@@ -67,8 +54,9 @@ const Input = () => {
           onChange={(e) => {
             setSrch(e.target.value);
           }}
+          className="input-srch"
         />
-        {open ? (
+        {openSug ? (
           <CloseIcon
             className="close-icon cursor-pointer"
             onClick={() => {
@@ -81,13 +69,13 @@ const Input = () => {
 
         <MicrophoneIcon
           className={
-            open
+            openSug
               ? "microphone-icon input-icon"
               : "microphone-icon microphone-icon-closed input-icon"
           }
         />
       </div>
-      {open ? (
+      {openSug ? (
         <div className="search-suggestions">
           {suggestions.map((item) => (
             <div
