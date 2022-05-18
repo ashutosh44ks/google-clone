@@ -28,9 +28,6 @@ const HGLangs = () => {
       <button className="g-lang link hover-underline cursor-pointer">
         മലയാളം
       </button>
-      <button className="g-lang link hover-underline cursor-pointer">
-        ਪੰਜਾਬੀ
-      </button>
     </div>
   );
 };

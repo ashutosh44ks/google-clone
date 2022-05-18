@@ -14,6 +14,7 @@ input:hover {
 input:focus-visible {
   box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
   outline: none;
+  border-radius: 21px 21px 0 0;
 }
 .search-icon,
 .microphone-icon {
@@ -25,9 +26,44 @@ input:focus-visible {
   fill: #9aa0a6;
 }
 .microphone-icon {
+  right: 65px;
+}
+.microphone-icon-closed {
   right: 35px;
+}
+.close-icon {
+  position: relative;
+  right: 75px;
+  height: 16px;
+  border-right: solid 1px #9aa0a6;
+  fill: #9aa0a6;
+  padding-right: 15px;
 }
 .search-container {
   display: flex;
   align-items: center;
+}
+.search-suggestions {
+  position: relative;
+  left: -15px;
+  background-color: white;
+  border: 1px solid #dfe1e5;
+  box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
+  width: 80vw;
+  max-width: 540px;
+  z-index: 1;
+  padding: 3px 0;
+}
+.suggestion-item {
+  padding: 5px 10px;
+}
+.suggestion-item:hover {
+  background-color: #edecec;
+}
+.suggestion-icon {
+  position: relative;
+  top: 3px;
+  fill: #9aa0a6;
+  height: 15px;
+  margin-right: 10px;
 }

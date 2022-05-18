@@ -8,15 +8,15 @@ import HGLangs from "./Components/HGLangs";
 
 function App() {
   const [open, setOpen] = useState(false);
-  const mediaTheme = window.matchMedia("(prefers-color-scheme: dark)");
-  useEffect(() => {
-    if (
-      window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-    ) {
-      console.log(1);
-    }
-  }, [mediaTheme]);
+  // const mediaTheme = window.matchMedia("(prefers-color-scheme: dark)");
+  // useEffect(() => {
+  //   if (
+  //     window.matchMedia &&
+  //     window.matchMedia("(prefers-color-scheme: dark)").matches
+  //   ) {
+  //     console.log(1);
+  //   }
+  // }, [mediaTheme]);
 
   return (
     <div className="App">
