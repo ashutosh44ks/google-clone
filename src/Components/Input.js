@@ -6,7 +6,7 @@ import { ReactComponent as CloseIcon } from "./Stylesheets/close.svg";
 import Button from "./Button";
 import axios from "axios";
 
-const Input = ({ openSug, setOpenSug}) => {
+const Input = ({ openSug, setOpenSug }) => {
   const [srch, setSrch] = useState("");
   const [suggestions, setSuggestions] = useState([]);
 
@@ -18,6 +18,13 @@ const Input = ({ openSug, setOpenSug}) => {
         input.focus();
       });
     });
+    return () => {
+      inputIcon.forEach((icon) => {
+        icon.removeEventListener("click", () => {
+          input.focus();
+        });
+      });
+    };
   }, []);
   useEffect(() => {
     axios
