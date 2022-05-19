@@ -67,3 +67,26 @@ input:focus-visible {
   height: 15px;
   margin-right: 10px;
 }
+
+@media (max-width: 500px) {
+  input {
+    position: relative;
+    left: 15px;
+    width: 70vw;
+  }
+  .search-icon {
+    z-index: 1;
+    left: 50px;
+  }
+  .search-suggestions {
+    left: 0;
+  }
+}
+@media (max-width: 400px) {
+  .input-main {
+    left: 15px;
+  }
+  input {
+    width: 60vw;
+  }
+}

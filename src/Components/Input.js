@@ -47,7 +47,7 @@ const Input = ({ openSug, setOpenSug }) => {
   };
 
   return (
-    <div className="flex-center-col">
+    <div className="flex-center-col input-main">
       <div
         className="search-container"
         title="Search"
