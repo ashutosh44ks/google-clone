@@ -28,10 +28,4 @@ body {
 .cursor-pointer {
   cursor: pointer;
 }
-.g-langs {
-  text-align: center;
-  font-size: 13px;
-}
-.g-lang {
-  text-decoration: none;
-}
+

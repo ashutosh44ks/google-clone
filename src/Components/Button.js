@@ -1,10 +1,21 @@
 import "./Stylesheets/Button.css";
+import { useNavigate } from "react-router-dom";
 
 const Button = ({ useFor, value }) => {
-  return <button className={`btn cursor-pointer ${useFor}`}>{value}</button>;
+  let navigate = useNavigate();
+  return (
+    <button
+      onClick={() => {
+        if (value === "Google Search") navigate("/google-clone/results");
+      }}
+      className={`btn cursor-pointer ${useFor}`}
+    >
+      {value}
+    </button>
+  );
 };
 Button.defaultProps = {
   useFor: "",
-  value: ""
+  value: "",
 };
 export default Button;

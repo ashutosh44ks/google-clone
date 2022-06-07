@@ -6,8 +6,7 @@ import { ReactComponent as CloseIcon } from "./Stylesheets/close.svg";
 import Button from "./Button";
 import axios from "axios";
 
-const Input = ({ openSug, setOpenSug }) => {
-  const [srch, setSrch] = useState("");
+const Input = ({ openSug, setOpenSug, srch, setSrch }) => {
   const [suggestions, setSuggestions] = useState([]);
 
   useEffect(() => {
@@ -87,7 +86,7 @@ const Input = ({ openSug, setOpenSug }) => {
           {suggestions.map((item) => (
             <div
               key={item}
-              className="suggestion-item"
+              className="suggestion-item cursor-pointer"
               onClick={() => {
                 setSrch(item);
               }}
