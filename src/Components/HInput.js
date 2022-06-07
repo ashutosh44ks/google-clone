@@ -6,7 +6,7 @@ import { ReactComponent as CloseIcon } from "./Stylesheets/close.svg";
 import Button from "./Button";
 import axios from "axios";
 
-const Input = ({ openSug, setOpenSug, srch, setSrch }) => {
+const HInput = ({ openSug, setOpenSug, srch, setSrch }) => {
   const [suggestions, setSuggestions] = useState([]);
 
   useEffect(() => {
@@ -107,4 +107,4 @@ const Input = ({ openSug, setOpenSug, srch, setSrch }) => {
   );
 };
 
-export default Input;
+export default HInput;

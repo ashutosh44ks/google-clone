@@ -1,0 +1,8 @@
+.rcontent-main {
+  padding-left: 105px;
+}
+@media (max-width: 1000px) {
+  .rcontent-main {
+    padding-left: 35px;
+  }
+}

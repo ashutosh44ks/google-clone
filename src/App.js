@@ -14,7 +14,7 @@ function App() {
     <Router>
       <Routes>
         <Route
-          path="/"
+          path="/google-clone"
           element={<Navigate replace to="/google-clone/home" />}
         />
         <Route

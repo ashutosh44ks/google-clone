@@ -1,10 +1,9 @@
 .results-navbar {
-  padding: 6px;
-  padding-right: 15px;
+  padding: 25px 35px 10px 105px;
   height: 50px;
   display: flex;
-  justify-content: flex-end;
   align-items: center;
+  justify-content: space-between;
   font-size: 13px;
   color: rgba(0, 0, 0, 0.87) !important;
 }
@@ -15,4 +14,25 @@
 }
 .results-navbar > ul > li {
   padding-left: 12px;
+}
+.rnav-tabs {
+  padding-left: 105px;
+  display: flex;
+  border-bottom: 1px solid #ebebeb;
+}
+.rnav-tabs > li {
+  margin: 0 10px;
+  width: 50px;
+  list-style: none;
+  text-align: center;
+  padding-bottom: 10px;
+}
+.rnav-tab-active {
+  border-bottom: 2px solid #1a0dab;
+}
+@media (max-width: 1000px) {
+  .results-navbar,
+  .rnav-tabs {
+    padding-left: 35px;
+  }
 }

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import HNavbar from "./../Components/HNavbar";
 import HLogoContainer from "./../Components/HLogoContainer";
-import Input from "./../Components/Input";
+import HInput from "./../Components/HInput";
 import Button from "./../Components/Button";
 import HFooter from "./../Components/HFooter";
 import HGLangs from "./../Components/HGLangs";
@@ -21,7 +21,6 @@ function Home({ srch, setSrch }) {
 
   return (
     <div
-      className="App"
       onClick={(e) => {
         console.log(e.target.className);
         if (e.target.className !== "input-srch") setOpenSug(false);
@@ -31,7 +30,7 @@ function Home({ srch, setSrch }) {
       <HNavbar open={open} setOpen={setOpen} />
       <div className="flex-center-col">
         <HLogoContainer />
-        <Input openSug={openSug} setOpenSug={setOpenSug} srch={srch} setSrch={setSrch} />
+        <HInput openSug={openSug} setOpenSug={setOpenSug} srch={srch} setSrch={setSrch} />
         <div className="btn-container">
           <Button value="Google Search" useFor="search-btn" />
           <Button value="I'm Feeling Lucky" useFor="search-btn" />
