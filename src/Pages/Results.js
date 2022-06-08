@@ -1,4 +1,3 @@
-import React from "react";
 import RNavbar from "../Components/RNavbar";
 import { useState } from "react";
 import ResultsContent from "../Components/ResultsContent";
@@ -9,7 +8,7 @@ const Results = ({ srch, setSrch }) => {
     <div
       onClick={(e) => {
         console.log(e.target.className);
-        if (e.target.className !== "input-srch") setOpenSug(false);
+        if (e.target.className !== "input-srch results-input") setOpenSug(false);
         if (e.target.className.baseVal !== "menu-icon") setOpen(false);
       }}
     >
