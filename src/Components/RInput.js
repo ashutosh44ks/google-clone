@@ -3,8 +3,7 @@ import { useState, useEffect } from "react";
 import { ReactComponent as SearchIcon } from "./Stylesheets/search.svg";
 import { ReactComponent as MicrophoneIcon } from "./Stylesheets/microphone.svg";
 import { ReactComponent as CloseIcon } from "./Stylesheets/close.svg";
-import Button from "./Button";
-import axios from "axios";
+import giveSuggestions from "../giveSuggestions";
 
 const RInput = ({ openSug, setOpenSug, srch, setSrch }) => {
   const [suggestions, setSuggestions] = useState([]);
@@ -25,26 +24,6 @@ const RInput = ({ openSug, setOpenSug, srch, setSrch }) => {
       });
     };
   }, []);
-  useEffect(() => {
-    axios
-      .request(options)
-      .then((response) => {
-        setSuggestions(response.data);
-        setOpenSug(true);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, [srch]);
-  const options = {
-    method: "GET",
-    url: "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/spelling/AutoComplete",
-    params: { text: srch },
-    headers: {
-      "X-RapidAPI-Host": "contextualwebsearch-websearch-v1.p.rapidapi.com",
-      "X-RapidAPI-Key": "ccea0af5f9msh9ee007c92712d24p129e6bjsnf00c25d283ed",
-    },
-  };
 
   return (
     <div
@@ -54,13 +33,33 @@ const RInput = ({ openSug, setOpenSug, srch, setSrch }) => {
           : "flex-center-col input-main"
       }
     >
-      <div className="search-container" title="Search">
+      <div
+        className="search-container"
+        title="Search"
+        onClick={() => {
+          setOpenSug((openSug) => !openSug);
+        }}
+      >
         <SearchIcon className="search-icon input-icon" />
         <input
           value={srch}
-          onChange={(e) => {
-            setSrch(e.target.value);
+          onKeyDown={(e) => {
+            if (e.key === " ")
+              giveSuggestions(srch)
+                .then((response) => {
+                  setSuggestions(response.data);
+                  console.log(suggestions + 111 + response.data);
+                })
+                .catch((error) => {
+                  alert(
+                    error.request.status === 429
+                      ? "Sorry, API only supports 100 requests per day."
+                      : `Error code ${error.request.status}`
+                  );
+                  console.error(error);
+                });
           }}
+          onChange={(e) => setSrch(e.target.value)}
           className="input-srch results-input"
         />
         {srch.length > 0 ? (
