@@ -4,6 +4,9 @@
 body {
   margin: 0;
 }
+.flex {
+  display: flex;
+}
 .flex-center-col {
   display: flex;
   align-items: center;
