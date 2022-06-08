@@ -1,6 +1,13 @@
 import React from "react";
 import RInput from "./RInput";
+import { ReactComponent as SettingsIcon } from "./Stylesheets/settings.svg";
+import { ReactComponent as SearchIcon } from "./Stylesheets/search.svg";
 import { ReactComponent as MenuIcon } from "./Stylesheets/menu.svg";
+import { ReactComponent as ImageIcon } from "./Stylesheets/image.svg";
+import { ReactComponent as VideoIcon } from "./Stylesheets/video.svg";
+import { ReactComponent as NewsIcon } from "./Stylesheets/news.svg";
+import { ReactComponent as MapsIcon } from "./Stylesheets/location.svg";
+import { ReactComponent as MoreIcon } from "./Stylesheets/more.svg";
 import Button from "./Button";
 import Menu from "./Menu";
 import "./Stylesheets/RNavbar.css";
@@ -15,7 +22,7 @@ const RNavbar = ({
   user,
 }) => {
   return (
-    <div>
+    <div className="rnavbar-container">
       <div className="results-navbar">
         <div className="flex-align-center">
           <img src="./logo.png" alt="GOOGLE" height="31px" />
@@ -28,7 +35,7 @@ const RNavbar = ({
         </div>
         <ul className="hnav-extra">
           <li className="hover-underline cursor-pointer">
-            <MenuIcon className="menu-icon" title="Settings" />
+            <SettingsIcon className="menu-icon" title="Settings" />
             {open ? <Menu /> : ""}
           </li>
           <li className="hover-underline cursor-pointer">
@@ -48,12 +55,27 @@ const RNavbar = ({
       </div>
       <div>
         <ul className="rnav-tabs">
-          <li className="link cursor-pointer rnav-tab-active">All</li>
-          <li className="cursor-pointer">News</li>
-          <li className="cursor-pointer">Images</li>
-          <li className="cursor-pointer">Videos</li>
-          <li className="cursor-pointer">Maps</li>
-          <li className="cursor-pointer">More</li>
+          <span className="flex">
+            <li className="link cursor-pointer flex-align-center rnav-tab-active">
+              <SearchIcon className="tab-icon" />
+              All
+            </li>
+            <li className="cursor-pointer flex-align-center">
+              <NewsIcon className="tab-icon" /> News
+            </li>
+            <li className="cursor-pointer flex-align-center">
+              <ImageIcon className="tab-icon" /> Images
+            </li>
+            <li className="cursor-pointer flex-align-center">
+              <VideoIcon className="tab-icon" /> Videos
+            </li>
+            <li className="cursor-pointer flex-align-center">
+              <MapsIcon className="tab-icon" /> Maps
+            </li>
+            <li className="cursor-pointer flex-align-center">
+              <MoreIcon className="tab-icon" /> More
+            </li>
+          </span>
           <li className="cursor-pointer">Tools</li>
         </ul>
       </div>
