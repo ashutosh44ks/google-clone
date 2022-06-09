@@ -42,7 +42,6 @@ const HInput = ({ openSug, setOpenSug, srch, setSrch }) => {
               giveSuggestions(srch)
                 .then((response) => {
                   setSuggestions(response.data);
-                  console.log(suggestions + 111 + response.data);
                 })
                 .catch((error) => {
                   alert(
