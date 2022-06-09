@@ -9,10 +9,18 @@
 .rdata-title {
   font-size: 20px;
   padding-top: 5px;
+  width: 70vw;
+  text-overflow: ellipsis;
+  height: 1.5rem;
+  overflow: hidden;
 }
 .rdata-desc {
   color: #4d5156;
   font-size: 14px;
   line-height: 1.58;
   max-width: 75vw;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
