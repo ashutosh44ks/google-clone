@@ -1,9 +1,9 @@
 import axios from "axios";
-import { ReactComponent as SearchIcon } from "./Stylesheets/search.svg";
 import { useState, useEffect } from "react";
 import RData from "./RData";
+import RelatedContent from "./RelatedContent";
 import "./Stylesheets/ResultsContent.css";
-const ResultsContent = ({ srch, page, setPage }) => {
+const ResultsContent = ({ srch, page }) => {
   const [srchData, setSrchData] = useState([]);
   const [relatedSrch, setRelatedSrch] = useState([]);
 
@@ -30,6 +30,11 @@ const ResultsContent = ({ srch, page, setPage }) => {
         setRelatedSrch(response.data.relatedSearch.slice(0, 8));
       })
       .catch(function (error) {
+        alert(
+          error.request.status === 429
+            ? "Sorry, API only supports 100 requests per day."
+            : `Error code ${error.request.status}`
+        );
         console.error(error);
       });
     console.log(relatedSrch);
@@ -47,21 +52,7 @@ const ResultsContent = ({ srch, page, setPage }) => {
           desc={item.description}
         />
       ))}
-      <div className="rcontent-related-head">Related searches</div>
-      <div className="rcontent-related">
-        {relatedSrch.map((item) => (
-          <div key={item} className="related-srch-bubble">
-            <SearchIcon className="search-icon-related-srch" />
-            {item.slice(3, item.length - 4)}
-          </div>
-        ))}
-      </div>
-      <div className="pagination">
-        <div>Goooooogle</div>
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => (
-          <span className="cursor-pointer link" style={{marginRight: "8px"}} onClick={(e) => setPage(e.target.innerText)}>{item}</span>
-        ))}
-      </div>
+      <RelatedContent relatedSrch={relatedSrch} />
     </div>
   );
 };

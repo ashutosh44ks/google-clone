@@ -2,6 +2,7 @@ import RNavbar from "../Components/RNavbar";
 import { useState } from "react";
 import ResultsContent from "../Components/ResultsContent";
 import RFooter from "../Components/RFooter";
+import Pagination from "../Components/Pagination";
 const Results = ({ srch, setSrch }) => {
   const [openSug, setOpenSug] = useState(false);
   const [open, setOpen] = useState(false);
@@ -23,7 +24,8 @@ const Results = ({ srch, setSrch }) => {
         open={open}
         setOpen={setOpen}
       />
-      <ResultsContent srch={srch} page={page} setPage={setPage} />
+      <ResultsContent srch={srch} page={page} />
+      <Pagination page={page} setPage={setPage} />
       <RFooter />
     </div>
   );

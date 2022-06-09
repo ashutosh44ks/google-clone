@@ -1,0 +1,19 @@
+.related-srch-bubble {
+  background-color: #f1f3f4;
+  border-radius: 100px;
+  padding: 15px;
+  margin: 0px 15px 8px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.search-icon-related-srch {
+  position: relative;
+  height: 20px;
+  left: -35px;
+  fill: #9aa0a6;
+}
+.rcontent-related-head {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
