@@ -26,7 +26,20 @@
 .footer-main > ul > li {
   padding: 15px;
 }
-
+.results-footer {
+  background-color: #f2f2f2;
+  color: #70757a;
+}
+.rfooter-main {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 14px;
+  padding: 0 30px;
+  list-style: none;
+}
+.rfooter-main > li {
+  margin-right: 40px;
+}
 @media (max-width: 1000px) {
   .footer-main {
     justify-content: space-between;
