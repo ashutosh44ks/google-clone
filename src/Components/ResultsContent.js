@@ -3,9 +3,20 @@ import { useState, useEffect } from "react";
 import RData from "./RData";
 import RelatedContent from "./RelatedContent";
 import "./Stylesheets/ResultsContent.css";
-const ResultsContent = ({ srch, page }) => {
-  const [srchData, setSrchData] = useState([]);
-  const [relatedSrch, setRelatedSrch] = useState([]);
+const ResultsContent = ({ srch, setSrch, page }) => {
+  const [srchData, setSrchData] = useState([1, 2, 3, 4, 5]);
+  const [relatedSrch, setRelatedSrch] = useState([
+    "Related Srch",
+    "Related Srch",
+    "Related Srch",
+    "Related Srch",
+    "Related Srch",
+    "Related Srch",
+    "Related Srch",
+    "Related Srch",
+    "Related Srch",
+    "Related Srch",
+  ]);
 
   const options = {
     method: "GET",
@@ -52,7 +63,7 @@ const ResultsContent = ({ srch, page }) => {
           desc={item.description}
         />
       ))}
-      <RelatedContent relatedSrch={relatedSrch} />
+      <RelatedContent relatedSrch={relatedSrch} setSrch={setSrch} />
     </div>
   );
 };

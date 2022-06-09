@@ -24,3 +24,8 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+.rdata-url-menu {
+  height: 12px;
+  fill: #5f6368;
+  margin-left: 15px;
+}

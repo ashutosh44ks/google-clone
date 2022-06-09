@@ -24,7 +24,7 @@ const Results = ({ srch, setSrch }) => {
         open={open}
         setOpen={setOpen}
       />
-      <ResultsContent srch={srch} page={page} />
+      <ResultsContent srch={srch} setSrch={setSrch} page={page} />
       <Pagination page={page} setPage={setPage} />
       <RFooter />
     </div>
