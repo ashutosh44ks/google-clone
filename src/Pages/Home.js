@@ -30,11 +30,20 @@ function Home({ srch, setSrch }) {
       <HNavbar open={open} setOpen={setOpen} />
       <div className="flex-center-col">
         <HLogoContainer />
-        <HInput openSug={openSug} setOpenSug={setOpenSug} srch={srch} setSrch={setSrch} />
-        <div className="btn-container">
-          <Button value="Google Search" useFor="search-btn" />
-          <Button value="I'm Feeling Lucky" useFor="search-btn" />
-        </div>
+        <HInput
+          openSug={openSug}
+          setOpenSug={setOpenSug}
+          srch={srch}
+          setSrch={setSrch}
+        />
+        {openSug ? (
+          ""
+        ) : (
+          <div className="btn-container">
+            <Button value="Google Search" useFor="search-btn" />
+            <Button value="I'm Feeling Lucky" useFor="search-btn" />
+          </div>
+        )}
         <HGLangs />
       </div>
       <HFooter />

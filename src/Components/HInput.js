@@ -76,7 +76,7 @@ const HInput = ({ openSug, setOpenSug, srch, setSrch }) => {
           }
         />
       </div>
-      {openSug ? (
+      {openSug && srch.length>0? (
         <div className="search-suggestions">
           {suggestions.map((item) => (
             <div
