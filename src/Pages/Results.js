@@ -1,5 +1,5 @@
 import RNavbar from "../Components/RNavbar";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ResultsContent from "../Components/ResultsContent";
 import RFooter from "../Components/RFooter";
 import Pagination from "../Components/Pagination";
@@ -7,6 +7,9 @@ const Results = ({ srch, setSrch }) => {
   const [openSug, setOpenSug] = useState(false);
   const [open, setOpen] = useState(false);
   const [page, setPage] = useState(1);
+  useEffect(() => {
+    document.title = `${srch} - Google Search`;
+  }, [srch]);
   return (
     <div
       onClick={(e) => {
