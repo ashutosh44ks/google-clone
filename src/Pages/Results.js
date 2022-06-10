@@ -3,13 +3,25 @@ import { useState, useEffect } from "react";
 import ResultsContent from "../Components/ResultsContent";
 import RFooter from "../Components/RFooter";
 import Pagination from "../Components/Pagination";
+import RNavbarFixed from "../Components/RNavbarFixed";
 const Results = ({ srch, setSrch }) => {
   const [openSug, setOpenSug] = useState(false);
   const [open, setOpen] = useState(false);
   const [page, setPage] = useState(1);
+  const [scroll, setScroll] = useState();
   useEffect(() => {
     document.title = `${srch} - Google Search`;
   }, [srch]);
+  const handleScroll = () => {
+    const position = window.scrollY;
+    setScroll(position);
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <div
       onClick={(e) => {
@@ -19,6 +31,15 @@ const Results = ({ srch, setSrch }) => {
         if (e.target.className.baseVal !== "menu-icon") setOpen(false);
       }}
     >
+      <RNavbarFixed
+        scroll={scroll}
+        srch={srch}
+        setSrch={setSrch}
+        openSug={openSug}
+        setOpenSug={setOpenSug}
+        open={open}
+        setOpen={setOpen}
+      />
       <RNavbar
         srch={srch}
         setSrch={setSrch}

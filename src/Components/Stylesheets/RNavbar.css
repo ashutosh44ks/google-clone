@@ -10,6 +10,15 @@
   font-size: 13px;
   color: rgba(0, 0, 0, 0.87) !important;
 }
+.results-fixed-navbar {
+  position: fixed;
+  z-index: 1;
+  background-color: white;
+  padding: 15px 35px 15px 105px;
+  height: 30px;
+  border-bottom: 2px solid #ebebeb;
+  width: 88vw;
+}
 .results-navbar > ul {
   display: flex;
   list-style: none;
@@ -43,6 +52,7 @@
   padding: 2px;
   fill: #5f6368;
 }
+
 @media (max-width: 1000px) {
   .results-navbar,
   .rnav-tabs {

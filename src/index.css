@@ -35,4 +35,6 @@ body {
 .cursor-pointer {
   cursor: pointer;
 }
-
+.dNone {
+  display: none;
+}
