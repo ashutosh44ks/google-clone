@@ -46,8 +46,8 @@ const HInput = ({ openSug, setOpenSug, srch, setSrch }) => {
                 .catch((error) => {
                   alert(
                     error.request.status === 429
-                      ? "Sorry, API only supports 100 requests per day."
-                      : `Error code ${error.request.status}`
+                      ? "Sorry, API only supports 100 requests per day. - HInput"
+                      : `Error code ${error.request.status} - HInput`
                   );
                   console.error(error);
                 });
