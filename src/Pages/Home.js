@@ -36,7 +36,7 @@ function Home({ srch, setSrch }) {
           srch={srch}
           setSrch={setSrch}
         />
-        {openSug ? (
+        {openSug && srch.length > 0 ? (
           ""
         ) : (
           <div className="btn-container">
