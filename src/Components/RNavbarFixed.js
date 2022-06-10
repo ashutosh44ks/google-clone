@@ -29,25 +29,6 @@ const RNavbarFixed = ({
           setOpenSug={setOpenSug}
         />
       </div>
-      <ul className="hnav-extra">
-        <li className="hover-underline cursor-pointer">
-          <SettingsIcon className="menu-icon" title="Settings" />
-          {open ? <Menu /> : ""}
-        </li>
-        <li className="hover-underline cursor-pointer">
-          <MenuIcon
-            className="menu-icon"
-            title="Google Apps"
-            onClick={() => {
-              setOpen((open) => !open);
-            }}
-          />
-          {open ? <Menu /> : ""}
-        </li>
-        <li className="hover-underline cursor-pointer">
-          {user ? `${user}` : <Button useFor="signin-btn" value="Sign In" />}
-        </li>
-      </ul>
     </div>
   );
 };
