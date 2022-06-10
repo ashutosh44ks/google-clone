@@ -24,6 +24,11 @@ body {
   display: flex;
   flex-direction: column;
 }
+.flex-space-bw-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .link {
   background-color: transparent;
   border: none;

@@ -1,5 +1,6 @@
 import React from "react";
 import RInput from "./RInput";
+import Sidebar from "./Sidebar";
 import { ReactComponent as SettingsIcon } from "./Stylesheets/settings.svg";
 import { ReactComponent as SearchIcon } from "./Stylesheets/search.svg";
 import { ReactComponent as MenuIcon } from "./Stylesheets/menu.svg";
@@ -19,6 +20,8 @@ const RNavbar = ({
   setSrch,
   openSug,
   setOpenSug,
+  sidebar,
+  setSidebar,
   user,
 }) => {
   return (
@@ -33,10 +36,12 @@ const RNavbar = ({
             setOpenSug={setOpenSug}
           />
         </div>
-        <ul className="hnav-extra">
+        <ul>
           <li className="hover-underline cursor-pointer">
-            <SettingsIcon className="menu-icon" title="Settings" />
-            {open ? <Menu /> : ""}
+            <SettingsIcon className="menu-icon" title="Settings" onClick={() => {
+                setSidebar(true);
+              }}/>
+            {sidebar ? <Sidebar setSidebar={setSidebar} /> : ""}
           </li>
           <li className="hover-underline cursor-pointer">
             <MenuIcon

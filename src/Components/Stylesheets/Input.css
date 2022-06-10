@@ -1,4 +1,4 @@
-input {
+.input-srch {
   padding: 12px;
   padding-left: 45px;
   padding-right: 45px;
@@ -7,11 +7,11 @@ input {
   border: 1px solid #dfe1e5;
   border-radius: 21px;
 }
-input:hover {
+.input-srch:hover {
   box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
   border-color: rgba(223, 225, 229, 0);
 }
-input:focus-visible {
+.input-srch:focus-visible {
   box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
   outline: none;
   border-radius: 21px 21px 0 0;
@@ -93,7 +93,7 @@ input:focus-visible {
 }
 
 @media (max-width: 500px) {
-  input {
+  .input-srch {
     position: relative;
     left: 15px;
     width: 70vw;
@@ -110,7 +110,7 @@ input:focus-visible {
   .input-main {
     left: 15px;
   }
-  input {
+  .input-srch {
     width: 60vw;
   }
 }

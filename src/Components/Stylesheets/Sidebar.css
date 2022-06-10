@@ -1,0 +1,64 @@
+.sidebar {
+  position: fixed;
+  right: 0;
+  top: 0;
+  background-color: white;
+  z-index: 11;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 360px;
+}
+.bg-overlay {
+  background: rgba(32, 33, 36, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 10;
+}
+.sidebar-section {
+  border-top: 1px solid #dadce0;
+  padding: 4px 0 10px;
+}
+.section-head-first {
+  font-size: 24px !important;
+  margin-bottom: 20px !important;
+}
+.section-head {
+  color: #202124;
+  font-size: 20px;
+  font-weight: normal;
+  margin-bottom: 8px;
+  margin-top: 16px;
+  padding: 0 24px;
+}
+.section-items {
+  padding: 12px 24px;
+  color: #3c4043;
+}
+.section-items:hover {
+  background-color: #f1f3f4;
+}
+.new-settings-icon {
+  height: 19px;
+  fill: #5f6368;
+}
+.close-settings-icon {
+  height: 15px;
+  fill: #5f6368;
+}
+#light-theme-icon {
+  fill: #5f6368;
+}
+#dark-theme-icon {
+  background-color: #222;
+  fill: white;
+}
+#device-theme-icon {
+  background: linear-gradient(90deg, #000 0%, #fff 50%);
+}
+input[type="radio"], input[type="checkbox"] {
+  margin: 0 !important;
+}
