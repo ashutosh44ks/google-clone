@@ -5,18 +5,7 @@ import RelatedContent from "./RelatedContent";
 import "./Stylesheets/ResultsContent.css";
 const ResultsContent = ({ srch, setSrch, page }) => {
   const [srchData, setSrchData] = useState([1, 2, 3, 4, 5]);
-  const [relatedSrch, setRelatedSrch] = useState([
-    "Related Srch",
-    "Related Srch",
-    "Related Srch",
-    "Related Srch",
-    "Related Srch",
-    "Related Srch",
-    "Related Srch",
-    "Related Srch",
-    "Related Srch",
-    "Related Srch",
-  ]);
+  const [relatedSrch, setRelatedSrch] = useState([]);
 
   const options = {
     method: "GET",
@@ -63,7 +52,12 @@ const ResultsContent = ({ srch, setSrch, page }) => {
           desc={item.description}
         />
       ))}
-      <RelatedContent relatedSrch={relatedSrch} setSrch={setSrch} />
+
+      {relatedSrch === [] ? (
+        ""
+      ) : (
+        <RelatedContent relatedSrch={relatedSrch} setSrch={setSrch} />
+      )}
     </div>
   );
 };
