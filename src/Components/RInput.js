@@ -5,7 +5,7 @@ import { ReactComponent as MicrophoneIcon } from "./Stylesheets/microphone.svg";
 import { ReactComponent as CloseIcon } from "./Stylesheets/close.svg";
 import giveSuggestions from "../giveSuggestions";
 
-const RInput = ({ openSug, setOpenSug, srch, setSrch }) => {
+const RInput = ({ openSug, setOpenSug, srch, setSrch, useFor }) => {
   const [suggestions, setSuggestions] = useState([]);
 
   useEffect(() => {
@@ -29,8 +29,8 @@ const RInput = ({ openSug, setOpenSug, srch, setSrch }) => {
     <div
       className={
         openSug
-          ? "flex-center-col input-main results-input-main"
-          : "flex-center-col input-main"
+          ? `flex-center-col input-main results-input-main ${useFor}`
+          : `flex-center-col input-main ${useFor}`
       }
     >
       <div
@@ -75,7 +75,7 @@ const RInput = ({ openSug, setOpenSug, srch, setSrch }) => {
         <MicrophoneIcon className="microphone-icon input-icon" />
       </div>
       {openSug && srch.length > 0 ? (
-        <div className="search-suggestions">
+        <div className="search-suggestions r-srch-sug">
           {suggestions.map((item) => (
             <div
               key={item}

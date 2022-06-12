@@ -34,13 +34,18 @@ const RNavbar = ({
             setSrch={setSrch}
             openSug={openSug}
             setOpenSug={setOpenSug}
+            useFor="normal-navbar"
           />
         </div>
         <ul>
           <li className="hover-underline cursor-pointer">
-            <SettingsIcon className="menu-icon" title="Settings" onClick={() => {
+            <SettingsIcon
+              className="menu-icon"
+              title="Settings"
+              onClick={() => {
                 setSidebar(true);
-              }}/>
+              }}
+            />
             {sidebar ? <Sidebar setSidebar={setSidebar} /> : ""}
           </li>
           <li className="hover-underline cursor-pointer">

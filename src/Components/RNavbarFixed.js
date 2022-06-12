@@ -1,20 +1,12 @@
-import React from "react";
 import RInput from "./RInput";
-import { ReactComponent as SettingsIcon } from "./Stylesheets/settings.svg";
-import { ReactComponent as MenuIcon } from "./Stylesheets/menu.svg";
-import Button from "./Button";
-import Menu from "./Menu";
 import "./Stylesheets/RNavbar.css";
 
 const RNavbarFixed = ({
   scroll,
-  open,
-  setOpen,
   srch,
   setSrch,
   openSug,
-  setOpenSug,
-  user,
+  setOpenSug
 }) => {
   return (
     <div
@@ -27,6 +19,7 @@ const RNavbarFixed = ({
           setSrch={setSrch}
           openSug={openSug}
           setOpenSug={setOpenSug}
+          useFor="fixed-navbar"
         />
       </div>
     </div>

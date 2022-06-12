@@ -39,8 +39,6 @@ const Results = ({ srch, setSrch }) => {
         setSrch={setSrch}
         openSug={openSug}
         setOpenSug={setOpenSug}
-        open={open}
-        setOpen={setOpen}
       />
       <RNavbar
         srch={srch}

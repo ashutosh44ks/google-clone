@@ -1,6 +1,6 @@
-import { ReactComponent as SearchIcon } from "./Stylesheets/search.svg";
 import { ReactComponent as MoreIcon } from "./Stylesheets/more.svg";
 import "./Stylesheets/RelatedContent.css";
+import RelatedContentItem from "./RelatedContentItem";
 
 const RelatedContent = ({ relatedSrch, setSrch }) => {
   return (
@@ -11,16 +11,7 @@ const RelatedContent = ({ relatedSrch, setSrch }) => {
       </div>
       <div className="rcontent-related">
         {relatedSrch.map((item) => (
-          <div
-            key={item}
-            className="related-srch-bubble cursor-pointer"
-            onClick={(e) => {
-              setSrch(e.target.innerText);
-            }}
-          >
-            <SearchIcon className="search-icon-related-srch" />
-            {item.slice(3, item.length - 4)}
-          </div>
+          <RelatedContentItem item={item} setSrch={setSrch} />
         ))}
       </div>
     </>
