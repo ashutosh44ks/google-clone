@@ -9,6 +9,7 @@ function giveSuggestions(srch) {
       "X-RapidAPI-Key": "ccea0af5f9msh9ee007c92712d24p129e6bjsnf00c25d283ed",
     },
   };
+  console.log("giveSuggestions was called");
   return axios.request(options);
 }
 export default giveSuggestions;
