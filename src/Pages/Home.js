@@ -28,7 +28,7 @@ function Home({ srch, setSrch }) {
       }}
     >
       <HNavbar open={open} setOpen={setOpen} />
-      <div className="flex-center-col">
+      <div className="flex-center-col home-main">
         <HLogoContainer />
         <HInput
           openSug={openSug}

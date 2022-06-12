@@ -5,3 +5,13 @@
 .g-lang {
   text-decoration: none;
 }
+@media (max-width: 500px) {  
+  .home-main {
+    margin-top: 10vh;
+  }
+}
+@media (min-width: 1366px) {
+  .home-main {
+    margin-top: 10vh;
+  }
+}
