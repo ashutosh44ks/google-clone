@@ -2,7 +2,7 @@ import React from "react";
 
 const HGLangs = () => {
   return (
-    <div className="g-langs">
+    <div className="g-langs hide">
       Google offered in:
       <button className="g-lang link hover-underline cursor-pointer">
         हिन्दी

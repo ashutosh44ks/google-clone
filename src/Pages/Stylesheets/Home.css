@@ -9,6 +9,9 @@
   .home-main {
     margin-top: 10vh;
   }
+  .hide.g-langs {
+    display: none;
+  }
 }
 @media (min-width: 1366px) {
   .home-main {

@@ -25,7 +25,7 @@ const ResultsContent = ({ srch, setSrch, page }) => {
   return (
     <div className="rcontent-main">
       <div className="rfetch-info">
-        About 19,30,00,000 results (0.46 seconds)
+        About {Math.floor(Math.random() * (100 - 20) + 20)} results ({(Math.random() * (5 - 1.5) + 1.5).toFixed(2)} seconds)
       </div>
       {srchData.map((item) => (
         <RData

@@ -120,24 +120,19 @@
 }
 @media (max-width: 500px) {
   .input-srch {
-    position: relative;
-    left: 15px;
-    width: 70vw;
+    width: 65vw;
   }
   .search-icon {
     z-index: 1;
-    left: 50px;
+    left: 40px;
   }
   .search-suggestions {
-    left: 0;
+    left: -15px;
   }
 }
-/* 
+
 @media (max-width: 400px) {
-  .input-main {
-    left: 15px;
-  }
   .input-srch {
     width: 60vw;
   }
-} */
+}
