@@ -1,4 +1,4 @@
-import React from "react";
+import { useNavigate } from "react-router-dom";
 import RInput from "./RInput";
 import Sidebar from "./Sidebar";
 import { ReactComponent as SettingsIcon } from "./Stylesheets/settings.svg";
@@ -24,11 +24,20 @@ const RNavbar = ({
   setSidebar,
   user,
 }) => {
+  let navigate = useNavigate();
   return (
     <div className="rnavbar-container">
       <div className="results-navbar">
         <div className="flex-align-center">
-          <img src="./logo.png" alt="GOOGLE" height="31px" />
+          <img
+            src="./logo.png"
+            alt="GOOGLE"
+            height="31px"
+            onClick={() => {
+              navigate("/google-clone/home");
+            }}
+            className="cursor-pointer"
+          />
           <RInput
             srch={srch}
             setSrch={setSrch}
