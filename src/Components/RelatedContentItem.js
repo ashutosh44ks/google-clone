@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { ReactComponent as SearchIcon } from "./Stylesheets/search.svg";
 
 const RelatedContentItem = ({ item, setSrch }) => {
